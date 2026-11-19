@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Shared styles for the four topic cells on the main screen.
+        Keeping them here avoids repeating the same attributes for every
+        button, in both the portrait and the landscape layouts.
+    -->
+
+    <!-- One cell: a vertical column holding the button and its label -->
+    <style name="TopicCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Empty space above and below the button, sized as a share of the cell -->
+    <style name="TopicGap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Icon button: takes most of the cell and uses the green selector -->
+    <style name="TopicButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">6</item>
+        <item name="android:background">@drawable/selector_button</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <!-- White label shown under each icon button -->
+    <style name="TopicLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Background of the topic ImageButtons:
+    light green while the button is pressed, green otherwise.
+    The pressed item must come first because the first matching item is used.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/light_green" android:state_pressed="true" />
+    <item android:drawable="@color/green" />
+</selector>

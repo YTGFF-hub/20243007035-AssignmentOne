@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- CampusLife button colours (specified in Part C) -->
+    <color name="green">#1B5E20</color>
+    <color name="light_green">#66BB6A</color>
+
+    <!-- Translucent black drawn over the banner photo so the white title stays readable -->
+    <color name="banner_overlay">#AA000000</color>
 </resources>
