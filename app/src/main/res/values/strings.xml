@@ -12,4 +12,8 @@
 
     <!-- Toast shown when a topic button is clicked, e.g. "Facilities clicked" -->
     <string name="toast_topic_clicked">%1$s clicked</string>
+
+    <!-- Detail screen placeholders (replaced with the topic data at run time) -->
+    <string name="detail_title_placeholder">This is a title</string>
+    <string name="detail_content_placeholder">This is content</string>
 </resources>

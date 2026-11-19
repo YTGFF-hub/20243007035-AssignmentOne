@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Detail screen of CampusLife: shows the information for one topic.
+    The banner takes one third of the height and the text area the other
+    two thirds (layout weights 1 and 2). The content text is placed inside
+    a ScrollView so that long text can be scrolled on any screen size.
+    The texts and icon below are placeholders that are replaced in Java.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <!-- Banner: darkened campus photo with the topic icon and topic name on top -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Decorative background photo, cropped to fill the banner and darkened -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:foreground="@color/banner_overlay"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
+
+        <!-- Left half: topic icon, right half: topic name -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!-- Icon column: empty space above and below keeps the icon centred and smaller -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <!-- Decorative, because the topic name is shown next to it -->
+                <ImageView
+                    android:id="@+id/imageviewDetailIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:contentDescription="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_btn_facilities" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textviewDetailName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/topic_facilities"
+                android:textAppearance="?attr/textAppearanceDisplaySmall"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Text area: the title stays in place, the content below it can scroll -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:paddingStart="?attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?attr/listPreferredItemPaddingEnd">
+
+        <TextView
+            android:id="@+id/textviewDetailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="?attr/listPreferredItemPaddingStart"
+            android:paddingBottom="?attr/listPreferredItemPaddingStart"
+            android:text="@string/detail_title_placeholder"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/textviewDetailContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_content_placeholder"
+                android:textAppearance="?attr/textAppearanceBodyMedium" />
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
