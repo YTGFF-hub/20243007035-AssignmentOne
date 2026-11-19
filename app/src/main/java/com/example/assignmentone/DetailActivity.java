@@ -1,6 +1,10 @@
 package com.example.assignmentone;
 
+import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
  * Detail screen of CampusLife.
  * Shows a banner with the topic icon and name, followed by a title and
  * scrollable content text for one topic.
+ * The topic is chosen by the index that MainActivity passes in the Intent.
  */
 public class DetailActivity extends AppCompatActivity {
 
@@ -36,5 +41,41 @@ public class DetailActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Read the unique identifier of the clicked topic (Facilities if it is missing)
+        int topicIndex = getIntent().getIntExtra(EXTRA_TOPIC_INDEX, TOPIC_FACILITIES);
+        showTopic(topicIndex);
+    }
+
+    /**
+     * Fills the screen with the data of one topic.
+     * All arrays use the same order, so the topic index selects the matching
+     * name, title, content and image name without any if or switch statements.
+     *
+     * @param topicIndex one of the TOPIC_* identifiers
+     */
+    // getIdentifier() is needed because arrays.xml stores the image names as plain text
+    @SuppressLint("DiscouragedApi")
+    private void showTopic(int topicIndex) {
+        Resources resources = getResources();
+
+        // Retrieve the data that belongs to the selected topic
+        String name = resources.getStringArray(R.array.topic_names)[topicIndex];
+        String title = resources.getStringArray(R.array.string_array_titles)[topicIndex];
+        String content = resources.getStringArray(R.array.string_array_content)[topicIndex];
+        // The image names in arrays.xml have spaces around them, so trim them first
+        String imageName = resources.getStringArray(R.array.string_array_images)[topicIndex].trim();
+        int imageId = resources.getIdentifier(imageName, "drawable", getPackageName());
+
+        // Replace the placeholder text and image in the layout
+        ImageView ivIcon = findViewById(R.id.imageviewDetailIcon);
+        TextView tvName = findViewById(R.id.textviewDetailName);
+        TextView tvTitle = findViewById(R.id.textviewDetailTitle);
+        TextView tvContent = findViewById(R.id.textviewDetailContent);
+
+        ivIcon.setImageResource(imageId);
+        tvName.setText(name);
+        tvTitle.setText(title.trim());
+        tvContent.setText(content);
     }
 }

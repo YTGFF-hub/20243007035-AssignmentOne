@@ -10,6 +10,17 @@
     <string name="topic_clubs">Clubs</string>
     <string name="topic_support">Support</string>
 
+    <!--
+        Short topic names shown in the DetailActivity banner.
+        Same order as the arrays in arrays.xml, so one index selects all data of a topic.
+    -->
+    <string-array name="topic_names">
+        <item>@string/topic_facilities</item>
+        <item>@string/topic_events</item>
+        <item>@string/topic_clubs</item>
+        <item>@string/topic_support</item>
+    </string-array>
+
     <!-- Toast shown when a topic button is clicked, e.g. "Facilities clicked" -->
     <string name="toast_topic_clicked">%1$s clicked</string>
 
