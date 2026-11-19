@@ -15,6 +15,16 @@ import androidx.core.view.WindowInsetsCompat;
  */
 public class DetailActivity extends AppCompatActivity {
 
+    /** Intent extra key for the index of the topic to show. */
+    public static final String EXTRA_TOPIC_INDEX = "com.example.assignmentone.EXTRA_TOPIC_INDEX";
+
+    // Unique identifier of each topic. The values are positions in the
+    // string arrays, so they must follow the order Facilities, Events, Clubs, Support.
+    public static final int TOPIC_FACILITIES = 0;
+    public static final int TOPIC_EVENTS = 1;
+    public static final int TOPIC_CLUBS = 2;
+    public static final int TOPIC_SUPPORT = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

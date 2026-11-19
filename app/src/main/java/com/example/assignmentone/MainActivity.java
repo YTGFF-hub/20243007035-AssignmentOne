@@ -1,5 +1,6 @@
 package com.example.assignmentone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -36,21 +37,37 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the Facilities ImageButton is clicked. */
     public void onClickFacilities(View view) {
         showClickedToast(R.string.topic_facilities);
+        openDetail(DetailActivity.TOPIC_FACILITIES);
     }
 
     /** Called when the Events ImageButton is clicked. */
     public void onClickEvents(View view) {
         showClickedToast(R.string.topic_events);
+        openDetail(DetailActivity.TOPIC_EVENTS);
     }
 
     /** Called when the Clubs ImageButton is clicked. */
     public void onClickClubs(View view) {
         showClickedToast(R.string.topic_clubs);
+        openDetail(DetailActivity.TOPIC_CLUBS);
     }
 
     /** Called when the Support ImageButton is clicked. */
     public void onClickSupport(View view) {
         showClickedToast(R.string.topic_support);
+        openDetail(DetailActivity.TOPIC_SUPPORT);
+    }
+
+    /**
+     * Starts DetailActivity with an explicit Intent and passes the index of the
+     * selected topic, so that DetailActivity knows which content to display.
+     *
+     * @param topicIndex one of the DetailActivity.TOPIC_* identifiers
+     */
+    private void openDetail(int topicIndex) {
+        Intent intent = new Intent(this, DetailActivity.class);
+        intent.putExtra(DetailActivity.EXTRA_TOPIC_INDEX, topicIndex);
+        startActivity(intent);
     }
 
     /**
