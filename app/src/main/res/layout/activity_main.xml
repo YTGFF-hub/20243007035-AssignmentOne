@@ -61,6 +61,7 @@
 
                 <ImageButton
                     android:id="@+id/imagebuttonFacilities"
+                    android:onClick="onClickFacilities"
                     style="@style/TopicButton"
                     android:contentDescription="@string/topic_facilities"
                     android:src="@drawable/img_btn_facilities" />
@@ -79,6 +80,7 @@
 
                 <ImageButton
                     android:id="@+id/imagebuttonEvents"
+                    android:onClick="onClickEvents"
                     style="@style/TopicButton"
                     android:contentDescription="@string/topic_events"
                     android:src="@drawable/img_btn_events" />
@@ -105,6 +107,7 @@
 
                 <ImageButton
                     android:id="@+id/imagebuttonClubs"
+                    android:onClick="onClickClubs"
                     style="@style/TopicButton"
                     android:contentDescription="@string/topic_clubs"
                     android:src="@drawable/img_btn_clubs" />
@@ -123,6 +126,7 @@
 
                 <ImageButton
                     android:id="@+id/imagebuttonSupport"
+                    android:onClick="onClickSupport"
                     style="@style/TopicButton"
                     android:contentDescription="@string/topic_support"
                     android:src="@drawable/img_btn_support" />

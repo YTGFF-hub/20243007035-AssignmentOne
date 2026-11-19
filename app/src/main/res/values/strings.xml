@@ -9,4 +9,7 @@
     <string name="topic_events">Events</string>
     <string name="topic_clubs">Clubs</string>
     <string name="topic_support">Support</string>
+
+    <!-- Toast shown when a topic button is clicked, e.g. "Facilities clicked" -->
+    <string name="toast_topic_clicked">%1$s clicked</string>
 </resources>
