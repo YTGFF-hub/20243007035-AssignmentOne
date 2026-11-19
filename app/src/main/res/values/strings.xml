@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">AssignmentOne</string>
+
+    <!-- Main screen -->
+    <string name="welcome_message">Welcome to CampusLife - Your Pocket Guide to University of Waikato</string>
+
+    <!-- Short names of the four topics (button labels) -->
+    <string name="topic_facilities">Facilities</string>
+    <string name="topic_events">Events</string>
+    <string name="topic_clubs">Clubs</string>
+    <string name="topic_support">Support</string>
 </resources>
