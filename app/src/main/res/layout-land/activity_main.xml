@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Main screen of CampusLife (landscape).
+    The screen is split into two equal halves with layout weights:
+    the top half is the welcome banner, the bottom half holds the four
+    topic ImageButtons next to each other in a single row.
+    Only the bottom half differs from the portrait layout in res/layout.
+    The look of each topic cell comes from the Topic* styles in styles.xml.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!-- Banner: campus photo with the welcome text drawn on top of it -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Decorative background photo, cropped to fill the banner and darkened -->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:foreground="@color/banner_overlay"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_main_banner" />
+
+        <!-- Banner title (40sp is the only fixed size allowed by the specification) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/welcome_message"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+    </FrameLayout>
+
+    <!-- Topic buttons: one row of four equal cells on the green bottom half -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/green"
+        android:orientation="horizontal">
+
+        <!-- Facilities: icon button with its label underneath -->
+        <LinearLayout style="@style/TopicCell">
+
+            <Space style="@style/TopicGap" />
+
+            <ImageButton
+                android:id="@+id/imagebuttonFacilities"
+                style="@style/TopicButton"
+                android:contentDescription="@string/topic_facilities"
+                android:src="@drawable/img_btn_facilities" />
+
+            <TextView
+                style="@style/TopicLabel"
+                android:text="@string/topic_facilities" />
+
+            <Space style="@style/TopicGap" />
+        </LinearLayout>
+
+        <!-- Events: icon button with its label underneath -->
+        <LinearLayout style="@style/TopicCell">
+
+            <Space style="@style/TopicGap" />
+
+            <ImageButton
+                android:id="@+id/imagebuttonEvents"
+                style="@style/TopicButton"
+                android:contentDescription="@string/topic_events"
+                android:src="@drawable/img_btn_events" />
+
+            <TextView
+                style="@style/TopicLabel"
+                android:text="@string/topic_events" />
+
+            <Space style="@style/TopicGap" />
+        </LinearLayout>
+
+        <!-- Clubs: icon button with its label underneath -->
+        <LinearLayout style="@style/TopicCell">
+
+            <Space style="@style/TopicGap" />
+
+            <ImageButton
+                android:id="@+id/imagebuttonClubs"
+                style="@style/TopicButton"
+                android:contentDescription="@string/topic_clubs"
+                android:src="@drawable/img_btn_clubs" />
+
+            <TextView
+                style="@style/TopicLabel"
+                android:text="@string/topic_clubs" />
+
+            <Space style="@style/TopicGap" />
+        </LinearLayout>
+
+        <!-- Support: icon button with its label underneath -->
+        <LinearLayout style="@style/TopicCell">
+
+            <Space style="@style/TopicGap" />
+
+            <ImageButton
+                android:id="@+id/imagebuttonSupport"
+                style="@style/TopicButton"
+                android:contentDescription="@string/topic_support"
+                android:src="@drawable/img_btn_support" />
+
+            <TextView
+                style="@style/TopicLabel"
+                android:text="@string/topic_support" />
+
+            <Space style="@style/TopicGap" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
