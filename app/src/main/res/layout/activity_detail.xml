@@ -95,7 +95,9 @@
             android:textAppearance="?attr/textAppearanceTitleMedium"
             android:textStyle="bold" />
 
+        <!-- The id lets Android keep the scroll position when the screen is rotated -->
         <ScrollView
+            android:id="@+id/scrollviewDetailContent"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">

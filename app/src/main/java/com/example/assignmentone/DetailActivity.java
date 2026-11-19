@@ -51,10 +51,11 @@ public class DetailActivity extends AppCompatActivity {
      * Fills the screen with the data of one topic.
      * All arrays use the same order, so the topic index selects the matching
      * name, title, content and image name without any if or switch statements.
+     * getIdentifier() is used (and its lint warning suppressed) because
+     * arrays.xml stores the image names as plain text, not as resource ids.
      *
      * @param topicIndex one of the TOPIC_* identifiers
      */
-    // getIdentifier() is needed because arrays.xml stores the image names as plain text
     @SuppressLint("DiscouragedApi")
     private void showTopic(int topicIndex) {
         Resources resources = getResources();

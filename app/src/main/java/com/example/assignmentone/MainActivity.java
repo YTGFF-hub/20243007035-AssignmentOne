@@ -33,26 +33,27 @@ public class MainActivity extends AppCompatActivity {
 
     // Click handlers below are linked to the ImageButtons through android:onClick
     // in both the portrait and the landscape activity_main.xml files.
+    // Each one confirms the click with a Toast and then opens the matching topic.
 
-    /** Called when the Facilities ImageButton is clicked. */
+    /** Called when the Facilities ImageButton is clicked: shows the Facilities details. */
     public void onClickFacilities(View view) {
         showClickedToast(R.string.topic_facilities);
         openDetail(DetailActivity.TOPIC_FACILITIES);
     }
 
-    /** Called when the Events ImageButton is clicked. */
+    /** Called when the Events ImageButton is clicked: shows the Events details. */
     public void onClickEvents(View view) {
         showClickedToast(R.string.topic_events);
         openDetail(DetailActivity.TOPIC_EVENTS);
     }
 
-    /** Called when the Clubs ImageButton is clicked. */
+    /** Called when the Clubs ImageButton is clicked: shows the Clubs details. */
     public void onClickClubs(View view) {
         showClickedToast(R.string.topic_clubs);
         openDetail(DetailActivity.TOPIC_CLUBS);
     }
 
-    /** Called when the Support ImageButton is clicked. */
+    /** Called when the Support ImageButton is clicked: shows the Support details. */
     public void onClickSupport(View view) {
         showClickedToast(R.string.topic_support);
         openDetail(DetailActivity.TOPIC_SUPPORT);
